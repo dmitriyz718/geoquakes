@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 import './App.css';
 import QuakesList from './Quakeslist';
+import Axios from 'axios';
 class App extends Component {
   state = {
     earthquakes: [],
   };
   componentDidMount() {
     const getQuakes = async () => {
-      let response = await (await fetch(`https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson`)).json();
-      this.setState({ earthquakes: response.features });
+      Axios.get('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson')
+        .then(res => this.setState({ earthquakes: res.data.features }))
+      /*       let response = await (await fetch(`https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson`)).json();
+            this.setState({ earthquakes: response.features }); */
     }
     getQuakes();
   };
+
 
   render() {
     return (

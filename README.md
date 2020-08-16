@@ -71,16 +71,16 @@ Write out the AJAX call that will grab the data and `console.log` the list of ea
         - Austin:  `{lat: 30.2682, lng: -97.74295}`
         - San Francisco: `{lat: 37.78, lng: -122.44}`
     - We recommend the `google-maps-react` npm package to get started
-    
+
 
 #### Part 4. Add pins to your map
-Once you've got the map to show up, your next goal is to drop a single pin on your city. This is a sanity check.  
+Once you've got the map to show up, your next goal is to drop a single pin on your city. This is a sanity check.
 - Next, can you add only the first earthquake to the map?
 - Can you add pins for *all* the earthquakes to the map?
 - Finally, can you replace the pin with the `earthquake.png` icon?
 
 #### Bonus:
-Extend your template:  
+Extend your template:
 - Calculate how long ago the quake occurred and add it to the page. E.g. "28 hours ago". Currently, the time that the API returns is in Unix time (seconds since 1/1/1970). That's a nice format for computers, but not a nice format for humans.
 - Parse the title to only include the location, E.g. Instead of "M 4.2 - 1km ESE of Fontana, California", it should just say "Fontana, California."
 - Create a visual indicator of the magnitude of a quake. For instance, maybe a 4.0 is indicated by a "yellow" dot, a 5.0 by an "orange" dot, and anything larger is "red".
