@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
-import QuakesList from './Quakeslist';
+import QuakesList from './components/Quakeslist';
+import MapContainer from './components/MapContainer';
 import Axios from 'axios';
 class App extends Component {
   state = {
     earthquakes: [],
   };
+
   componentDidMount() {
     const getQuakes = async () => {
       Axios.get('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson')
@@ -21,8 +23,8 @@ class App extends Component {
     return (
       <div className="app" >
         <div className="mapContainer">
-          ...put Map Component here...
-      </div>
+          <MapContainer />
+        </div>
         <div className="quakeContainer">
           <h1>Earthquakes from the past week:</h1>
           <QuakesList earthquakes={this.state.earthquakes} />
